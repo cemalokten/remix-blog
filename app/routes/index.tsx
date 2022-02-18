@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 export const Header = styled.header`
   width: 100vw;
+  position: fixed;
   padding: 2rem;
 `
 export const Footer = styled.footer`
@@ -20,18 +21,15 @@ export const Nav = styled.nav`
 export const List = styled.li`
   list-style: none;
 `
-
 export const Section = styled.section`
   width: 100vw;
-  padding: 2rem;
+  padding: 10vw 2rem 2rem 2rem;
 `
-
 export const Article = styled.article`
   width: 100%;
 `
-
 export const Paragraph = styled.p`
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 `
 
 export default function Index() {
@@ -39,16 +37,22 @@ export default function Index() {
     <React.Fragment>
       <Header>
         <Nav>
-          <List>INFO</List>
-          <List>BLOG</List>
+          <List>
+            <button>INFO</button>
+          </List>
+          <List>
+            <Link to={'./posts'}>
+              <button>BLOG</button>
+            </Link>
+          </List>
         </Nav>
       </Header>
       <Section>
         <Article>
           <Paragraph>
-            I am a London based Web Developer. Mostly working across (but not
-            limited to) the food, drink, hospitality and lifestyle sectors, with
-            experience in graphic and editorial design for screen and print.
+            Hi my name is Cemal (Je-mal), I am a web developer in the making.
+            Once upon a time I worked in the design industry, designing
+            furniture and products.
           </Paragraph>
           <ul>
             <li>SQL</li>
@@ -60,15 +64,19 @@ export default function Index() {
             <li>TYPESCRIPT</li>
           </ul>
           <Paragraph>
-            Specialising in: Brand identity Promotional material Social media /
-            marketing assets Printed matter Signage Packaging
+            Lately, I've been learning how to solve problems with lines of code
+            instead of pieces of wood.
           </Paragraph>
         </Article>
       </Section>
       <Footer>
         <Nav>
-          <List>GITHUB</List>
-          <List>EMAIL</List>
+          <List>
+            <button>GITHUB</button>
+          </List>
+          <List>
+            <button>EMAIL</button>
+          </List>
         </Nav>
       </Footer>
     </React.Fragment>
