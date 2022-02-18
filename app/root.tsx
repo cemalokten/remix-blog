@@ -4,13 +4,16 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
-} from "remix";
-import type { MetaFunction } from "remix";
+  ScrollRestoration,
+} from 'remix'
+import type { MetaFunction } from 'remix'
+import styles from '~/styles/global.css'
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
-};
+  return { title: 'Cemal Okten Junior Developer' }
+}
+
+export const links = () => [{ rel: 'stylesheet', href: styles }]
 
 export default function App() {
   return (
@@ -20,6 +23,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
+        {typeof document === 'undefined' ? '__STYLES__' : null}
       </head>
       <body>
         <Outlet />
@@ -28,5 +32,5 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
-  );
+  )
 }
