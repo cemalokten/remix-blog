@@ -2,6 +2,10 @@ import React from 'react'
 import { Link } from 'remix'
 import styled from 'styled-components'
 
+interface Props {
+  readonly center: boolean
+}
+
 export const Header = styled.header`
   width: 100vw;
   position: fixed;
@@ -21,9 +25,13 @@ export const Nav = styled.nav`
 export const List = styled.li`
   list-style: none;
 `
-export const Section = styled.section`
+export const Section = styled.section<Props>`
+  display: flex;
+  align-items: ${(props) => (props.center ? 'center' : 'flex-start')};
+  justify-content: center;
   width: 100vw;
-  padding: 10vw 2rem 2rem 2rem;
+  min-height: 100vh;
+  padding: 2rem;
 `
 export const Article = styled.article`
   width: 100%;
@@ -47,7 +55,7 @@ export default function Index() {
           </List>
         </Nav>
       </Header>
-      <Section>
+      <Section center>
         <Article>
           <Paragraph>
             Hi my name is Cemal (Je-mal), I am a web developer in the making.
