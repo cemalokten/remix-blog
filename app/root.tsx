@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Links,
   LiveReload,
@@ -8,12 +9,27 @@ import {
 } from 'remix'
 import type { MetaFunction } from 'remix'
 import styles from '~/styles/global.css'
+import * as C from './components/index'
 
-export const meta: MetaFunction = () => {
-  return { title: 'Cemal Okten Junior Developer' }
+type Props = {
+  children: React.ReactNode
 }
 
+export const meta: MetaFunction = () => ({
+  title: 'Cemal Okten Junior Developer',
+})
+
 export const links = () => [{ rel: 'stylesheet', href: styles }]
+
+function Layout({ children }: Props) {
+  return (
+    <>
+      <C.Header post />
+      {children}
+      <C.Footer />
+    </>
+  )
+}
 
 export default function App() {
   return (
@@ -26,7 +42,9 @@ export default function App() {
         {typeof document === 'undefined' ? '__STYLES__' : null}
       </head>
       <body>
-        <Outlet />
+        <Layout>
+          <Outlet />
+        </Layout>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

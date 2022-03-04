@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'LuculentRegular';
+  src: url('/fonts/luculent.woff') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'regular';
+  src: url('/fonts/basis-grotesque-regular.woff') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'medium';
+  src: url('/fonts/basis-grotesque-medium.woff') format('woff');
+  font-style: normal;
+}
+
 *,
 *::before,
 *::after {
@@ -24,6 +42,7 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 body {
+  font-family: 'medium';
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -54,4 +73,25 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:link {
+  color: #000000;
+}
+
+a:visited {
+  color: #000000;
+}
+
+a:hover {
+  color: #88ff00;
+}
+
+p {
+  font-size: 2vw;
+  margin-top: 1.3rem;
 }

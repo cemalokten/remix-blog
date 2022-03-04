@@ -10,6 +10,7 @@ export type Post = {
   tags: string
   date: string
   background: Array<string>
+  color: Array<String>
 }
 
 export type PostMarkdownAttributes = {
@@ -17,6 +18,7 @@ export type PostMarkdownAttributes = {
   tags: Array<string>
   date: string
   background: Array<string>
+  color: Array<String>
 }
 
 const pathOfPosts = path.join(__dirname, '..', 'posts')
@@ -27,7 +29,8 @@ const hasValidPostAttributes = (
   attributes?.title ||
   attributes?.tags ||
   attributes?.date ||
-  attributes?.background
+  attributes?.background ||
+  attributes?.color
 
 export const getPostsTitle = async () => {
   const postDir = await fs.readdir(pathOfPosts)
@@ -49,6 +52,7 @@ export const getPostsTitle = async () => {
         tags: attributes.tags,
         date: attributes.date,
         background: attributes.background,
+        color: attributes.color,
       }
     })
   )
@@ -70,5 +74,6 @@ export const getPost = async (slug: string) => {
     tags: attributes.tags,
     date: attributes.date,
     background: attributes.background,
+    color: attributes.color,
   }
 }
