@@ -95,3 +95,11 @@ p {
   font-size: 2vw;
   margin-top: 1.3rem;
 }
+
+code {
+  background-color: rgb(213, 255, 217);
+  border-radius: 0.3em;
+  padding: 0.3em 0.1em 0.1em 0.1em;
+  white-space: normal;
+  font-family: luculent;
+}

@@ -9,6 +9,7 @@ interface Props {
   readonly start?: boolean
   readonly end?: boolean
   readonly color?: string
+  readonly rotation?: number
 }
 
 export const Header = styled.header`
@@ -56,7 +57,7 @@ export const Article = styled.article<Props>`
   margin-top: ${(props) => props.mt && `${props.mt}rem`};
 `
 export const Paragraph = styled.p`
-  font-size: 1.4rem;
+  font-size: 2vw;
 `
 export const H1 = styled.h1<Props>`
   font-size: 4vw;
@@ -86,12 +87,27 @@ export const Tag = styled.span<Props>`
   background-color: ${(props) => (props.bg ? props.bg : 'red')};
   padding-left: ${(props) => (props.start ? '1.2vw' : '0.8vw')};
   padding-right: ${(props) => (props.end ? '1.2vw' : '0.8vw')};
-  border-top-left-radius: ${(props) => (props.start ? '2rem' : '0')};
-  border-bottom-left-radius: ${(props) => (props.start ? '2rem' : '0')};
+  border-top-left-radius: ${(props) => (props.start ? '2vw' : '0')};
+  border-bottom-left-radius: ${(props) => (props.start ? '2vw' : '0')};
   border-top-right-radius: ${(props) => (props.end ? '2vw' : '0')};
   border-bottom-right-radius: ${(props) => (props.end ? '2vw' : '0')};
   font-family: 'LuculentRegular';
 `
+export const TagSingle = styled.span<Props>`
+  font-size: 1.5vw;
+  padding-top: 0.4rem;
+  color: ${(props) => (props.color ? props.color : '#000000')};
+  background-color: ${(props) => (props.bg ? props.bg : 'red')};
+  padding-left: 0.8vw;
+  padding-right: 0.8vw;
+  border-radius: 2vw;
+  font-family: 'LuculentRegular';
+  display: inline-block;
+  transform: ${(props) =>
+    props.rotation ? `rotate(${props.rotation}deg)` : `rotate(0deg)`};
+  margin-top: ${(props) => (props.mt ? `${props.mt}vw` : '0vw')};
+`
+
 export const Button = styled.button`
   display: inline-block;
   border: solid 0px;
@@ -135,3 +151,4 @@ export const Flex = styled.div<Props>`
 `
 
 export const StyledLink = styled.link<Props>``
+//

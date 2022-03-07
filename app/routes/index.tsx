@@ -12,13 +12,15 @@ export default function Index() {
           products.
         </S.Paragraph>
         <ul>
-          <li>SQL</li>
-          <li>REACT</li>
-          <li>NODE.JS</li>
-          <li>REMIX</li>
-          <li>NEXT.JS</li>
-          <li>REACT NATIVE</li>
-          <li>TYPESCRIPT</li>
+          <S.TagSingle bg={'#88ff00'} rotation="-14" mt={3}>
+            SQL
+          </S.TagSingle>
+          <S.TagSingle>REACT</S.TagSingle>
+          <S.TagSingle>NODE.JS</S.TagSingle>
+          <S.TagSingle>REMIX</S.TagSingle>
+          <S.TagSingle>NEXT.JS</S.TagSingle>
+          <S.TagSingle>REACT NATIVE</S.TagSingle>
+          <S.TagSingle>TYPESCRIPT</S.TagSingle>
         </ul>
         <S.Paragraph>
           Lately, I&apos;ve been learning how to solve problems with lines of
