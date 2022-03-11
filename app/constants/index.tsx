@@ -11,6 +11,7 @@ export const GITHUB_LINK = `http://www.github.com/cemalokten`
 export const EMAIL_LINK = 'mailto:hello@cemal.io'
 
 // COLORS
+export const WHITE = '#ffffff'
 export const RED_A = '#ff0000'
 export const RED_B = '#d50000'
 export const RED_C = '#9a0000'
@@ -30,4 +31,5 @@ export const ORANGE_D = '#fca400'
 export const YELLOW_A = '#ffc400'
 export const YELLOW_B = '#ffdd00'
 export const YELLOW_C = '#ffea00'
-export const YELLOW_D = '#fff300'
+export const YELLOW_D = '#FAFF00'
+export const PURPLE_A = '#9AA9FF'

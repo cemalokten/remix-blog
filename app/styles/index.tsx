@@ -4,6 +4,8 @@ interface Props {
   readonly center?: boolean
   readonly mt?: number
   readonly mb?: number
+  readonly ml?: number
+  readonly mr?: number
   readonly post?: boolean
   readonly bg?: string
   readonly start?: boolean
@@ -31,12 +33,14 @@ export const Nav = styled.nav`
   flex-direction: row;
   justify-content: space-between;
 `
-export const List = styled.li<Props>`
+export const List = styled.ul<Props>`
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: ${(props) => (props.center ? 'center' : 'flex-start')};
   padding-bottom: ${(props) => props.mb && `${props.mb}vw`};
+  padding-top: ${(props) => props.mt && `${props.mt}vw`};
 `
 export const Section = styled.section<Props>`
   display: flex;
@@ -51,14 +55,32 @@ export const Section = styled.section<Props>`
   z-index: ${(props) => (props.post ? '100' : '0')};
 `
 export const Article = styled.article<Props>`
-  max-width: 75vw;
+  max-width: 60vw;
   padding-top: 4vw;
   padding-bottom: 10vw;
   margin-top: ${(props) => props.mt && `${props.mt}rem`};
 `
+export const TagSingle = styled.span<Props>`
+  font-size: 1.5vw;
+  color: ${({ color }) => color || '#000000'};
+  background-color: ${(props) => (props.bg ? props.bg : 'red')};
+  padding-top: 0.4rem;
+  padding-left: 0.8vw;
+  padding-right: 0.8vw;
+  margin-top: ${({ mt }) => `${mt}vw` || '1.2vw'};
+  margin-bottom: ${({ mb }) => `${mb}vw` || '1.2vw'};
+  margin-left: ${({ ml }) => `${ml}vw` || '1.2vw'};
+  margin-right: ${(props) => (props.mr ? `${props.mr}vw` : '1.2vw')};
+  border-radius: 2vw;
+  font-family: 'LuculentRegular';
+  display: inline-block;
+  transform: ${({ rotation }) =>
+    rotation ? `rotate(${rotation}deg)` : `rotate(0deg)`};
+`
 export const Paragraph = styled.p`
   font-size: 2vw;
 `
+
 export const H1 = styled.h1<Props>`
   font-size: 4vw;
   font-weight: normal;
@@ -82,7 +104,6 @@ export const Close = styled.span`
   align-items: center;
   justify-content: center;
 `
-
 export const Tag = styled.span<Props>`
   font-size: 2vw;
   padding-top: 0.4rem;
@@ -95,19 +116,6 @@ export const Tag = styled.span<Props>`
   border-top-right-radius: ${(props) => (props.end ? '2vw' : '0')};
   border-bottom-right-radius: ${(props) => (props.end ? '2vw' : '0')};
   font-family: 'LuculentRegular';
-`
-export const TagSingle = styled.span<Props>`
-  font-size: 1.5vw;
-  padding-top: 0.4rem;
-  color: ${(props) => (props.color ? props.color : '#000000')};
-  background-color: ${(props) => (props.bg ? props.bg : 'red')};
-  padding-left: 0.8vw;
-  padding-right: 0.8vw;
-  border-radius: 2vw;
-  font-family: 'LuculentRegular';
-  display: inline-block;
-  transform: ${({ rotation }) =>
-    rotation ? `rotate(${rotation}deg)` : `rotate(0deg)`};
 `
 
 export const Button = styled.button`

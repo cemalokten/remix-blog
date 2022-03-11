@@ -14,24 +14,17 @@ function Header() {
   return (
     <S.Header>
       <S.Nav>
-        <S.List>
-          <Link to={CONST.INFO_LINK}>
-            <S.Button type="button">{CONST.INFO}</S.Button>
-          </Link>
-        </S.List>
-        {post && (
-          <S.List>
-            <C.Close />
-          </S.List>
-        )}
-        <S.List>
-          <Link to={CONST.BLOG_LINK}>
-            <S.Button type="button">{CONST.BLOG}</S.Button>
-          </Link>
-        </S.List>
+        <Link to={CONST.INFO_LINK}>
+          <S.Button type="button">{CONST.INFO}</S.Button>
+        </Link>
+        {post && <C.Close />}
+        <Link to={CONST.BLOG_LINK}>
+          <S.Button type="button">{CONST.BLOG}</S.Button>
+        </Link>
       </S.Nav>
     </S.Header>
   )
 }
 
 export default Header
+// TODO: Flashing buttons when on a page

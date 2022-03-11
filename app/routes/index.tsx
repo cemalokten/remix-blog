@@ -8,16 +8,46 @@ export default function Index() {
     <S.Section center>
       <S.Article>
         <S.Paragraph>
-          Hi my name is Cemal (Je-mal), I am a web developer in the making. Once
-          upon a time I worked in the design industry, designing furniture and
-          products.
+          I am a London based Web Developer. Mostly working across (but not
+          limited to) the food, drink, hospitality and lifestyle sectors, with
+          experience in graphic and editorial design for screen and print.
         </S.Paragraph>
-        <ul>
-          <C.TagSingle background={CONST.RED_A} rotation={20} title="SQL" />
-        </ul>
+        <S.List mt={3} mb={3} center>
+          <C.TagSingle background={CONST.GREEN_A} rotation={-6} title="REACT" />
+          <C.TagSingle
+            background={CONST.YELLOW_D}
+            rotation={6}
+            title="REACT NATIVE"
+          />
+          <C.TagSingle
+            background={CONST.BLUE_A}
+            color={CONST.WHITE}
+            rotation={4}
+            title="SQL"
+          />
+          <C.TagSingle background={CONST.RED_A} rotation={10} title="GIT" />
+          <C.TagSingle
+            background={CONST.PURPLE_A}
+            rotation={-5}
+            title="NODEJS"
+          />
+          <C.TagSingle background={CONST.ORANGE_A} rotation={2} title="REMIX" />
+          <C.TagSingle
+            background={CONST.ORANGE_C}
+            rotation={-4}
+            title="NEXTJS"
+          />
+          <C.TagSingle
+            background={CONST.BLUE_D}
+            color={CONST.WHITE}
+            rotation={7}
+            title="POSTGRES"
+          />
+        </S.List>
         <S.Paragraph>
-          Lately, I&apos;ve been learning how to solve problems with lines of
-          code instead of pieces of wood.
+          We created features to arrange and shift the characters: you can make
+          them jump over the baseline or hang from the top. See for yourself on
+          the Gravity page, or download the full & free trials.
         </S.Paragraph>
       </S.Article>
     </S.Section>
