@@ -3,12 +3,14 @@ import { Link } from 'remix'
 import * as S from '../../styles'
 import * as C from '..'
 import * as CONST from '../../constants'
+import { useLocation } from 'react-router-dom'
 
 type Props = {
   post: boolean
 }
 
-function Header({ post }: Props) {
+function Header() {
+  const post = useLocation().pathname.includes('posts/')
   return (
     <S.Header>
       <S.Nav>

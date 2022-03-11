@@ -12,4 +12,5 @@ function Close() {
     </S.Flex>
   )
 }
+
 export default Close

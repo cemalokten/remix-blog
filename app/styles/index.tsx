@@ -66,6 +66,9 @@ export const H1 = styled.h1<Props>`
   font-family: 'LuculentRegular';
   margin-top: ${(props) => props.mt && `${props.mt}rem`};
   margin-bottom: ${(props) => props.mb && `${props.mb}rem`};
+  &:hover {
+    color: ${({ color }) => color && color};
+  }
 `
 
 export const Close = styled.span`
@@ -103,9 +106,8 @@ export const TagSingle = styled.span<Props>`
   border-radius: 2vw;
   font-family: 'LuculentRegular';
   display: inline-block;
-  transform: ${(props) =>
-    props.rotation ? `rotate(${props.rotation}deg)` : `rotate(0deg)`};
-  margin-top: ${(props) => (props.mt ? `${props.mt}vw` : '0vw')};
+  transform: ${({ rotation }) =>
+    rotation ? `rotate(${rotation}deg)` : `rotate(0deg)`};
 `
 
 export const Button = styled.button`

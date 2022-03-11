@@ -10,6 +10,7 @@ import {
 import type { MetaFunction } from 'remix'
 import styles from '~/styles/global.css'
 import * as C from './components/index'
+import { useLocation } from 'react-router-dom'
 
 type Props = {
   children: React.ReactNode
@@ -24,7 +25,7 @@ export const links = () => [{ rel: 'stylesheet', href: styles }]
 function Layout({ children }: Props) {
   return (
     <>
-      <C.Header post />
+      <C.Header />
       {children}
       <C.Footer />
     </>

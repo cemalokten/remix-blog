@@ -1,6 +1,7 @@
 import React from 'react'
 import * as C from '../components'
 import * as S from '../styles'
+import * as CONST from '../constants'
 
 export default function Index() {
   return (
@@ -12,15 +13,7 @@ export default function Index() {
           products.
         </S.Paragraph>
         <ul>
-          <S.TagSingle bg={'#88ff00'} rotation="-14" mt={3}>
-            SQL
-          </S.TagSingle>
-          <S.TagSingle>REACT</S.TagSingle>
-          <S.TagSingle>NODE.JS</S.TagSingle>
-          <S.TagSingle>REMIX</S.TagSingle>
-          <S.TagSingle>NEXT.JS</S.TagSingle>
-          <S.TagSingle>REACT NATIVE</S.TagSingle>
-          <S.TagSingle>TYPESCRIPT</S.TagSingle>
+          <C.TagSingle background={CONST.RED_A} rotation={20} title="SQL" />
         </ul>
         <S.Paragraph>
           Lately, I&apos;ve been learning how to solve problems with lines of

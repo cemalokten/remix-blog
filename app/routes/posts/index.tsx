@@ -16,7 +16,7 @@ export default function Posts() {
         {posts.map((post) => (
           <S.List key={post.slug} mb={5}>
             <Link to={post.slug}>
-              <S.H1>{post.title}</S.H1>
+              <S.H1 color={post.background[0]}>{post.title}</S.H1>
             </Link>
             <C.Tags
               tags={post.tags}

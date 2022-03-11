@@ -2,15 +2,14 @@ import React from 'react'
 import * as S from '../../styles'
 
 type Props = {
-  tags: Array<String>
-  background: Array<String>
+  tags: Array<string>
+  background: Array<string>
   date: string
-  color: Array<String>
+  color: Array<string>
 }
 
 function Tags({ tags, background, color, date }: Props) {
-  console.log({ color })
-  const tagList = tags.map((tag, id) => {
+  const tagList = tags.map((tag: string, id: number) => {
     if (id === 0)
       return (
         <S.Tag start bg={background[id]} color={color[id]}>
