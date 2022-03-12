@@ -40,8 +40,32 @@ export default function Index() {
           <C.TagSingle
             background={CONST.BLUE_D}
             color={CONST.WHITE}
-            rotation={7}
+            rotation={-3}
             title="POSTGRES"
+          />
+          <C.TagSingle
+            background={CONST.PINK_B}
+            color={CONST.WHITE}
+            rotation={2}
+            title="CSS"
+          />
+          <C.TagSingle
+            background={CONST.GREEN_D}
+            color={CONST.WHITE}
+            rotation={-5}
+            title="HTML"
+          />
+          <C.TagSingle
+            background={CONST.BLUE_E}
+            color={CONST.WHITE}
+            rotation={2}
+            title="TYPESCRIPT"
+          />
+          <C.TagSingle
+            background={CONST.PINK_C}
+            color={CONST.WHITE}
+            rotation={-4}
+            title="GRAPHQL"
           />
         </S.List>
         <S.Paragraph>
