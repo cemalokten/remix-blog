@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 interface Props {
   readonly center?: boolean
@@ -39,6 +39,7 @@ export const List = styled.ul<Props>`
   flex-direction: row;
   flex-wrap: wrap;
   align-items: ${(props) => (props.center ? 'center' : 'flex-start')};
+  justify-content: center;
   padding-bottom: ${(props) => props.mb && `${props.mb}vw`};
   padding-top: ${(props) => props.mt && `${props.mt}vw`};
 `
@@ -60,23 +61,7 @@ export const Article = styled.article<Props>`
   padding-bottom: 10vw;
   margin-top: ${(props) => props.mt && `${props.mt}rem`};
 `
-export const TagSingle = styled.span<Props>`
-  font-size: 1.5vw;
-  color: ${({ color }) => color || '#000000'};
-  background-color: ${(props) => (props.bg ? props.bg : 'red')};
-  padding-top: 0.4rem;
-  padding-left: 0.8vw;
-  padding-right: 0.8vw;
-  margin-top: ${({ mt }) => `${mt}vw` || '1.2vw'};
-  margin-bottom: ${({ mb }) => `${mb}vw` || '1.2vw'};
-  margin-left: ${({ ml }) => `${ml}vw` || '1.2vw'};
-  margin-right: ${(props) => (props.mr ? `${props.mr}vw` : '1.2vw')};
-  border-radius: 2vw;
-  font-family: 'LuculentRegular';
-  display: inline-block;
-  transform: ${({ rotation }) =>
-    rotation ? `rotate(${rotation}deg)` : `rotate(0deg)`};
-`
+
 export const Paragraph = styled.p`
   font-size: 2vw;
 `
@@ -104,6 +89,7 @@ export const Close = styled.span`
   align-items: center;
   justify-content: center;
 `
+
 export const Tag = styled.span<Props>`
   font-size: 2vw;
   padding-top: 0.4rem;
@@ -117,21 +103,67 @@ export const Tag = styled.span<Props>`
   border-bottom-right-radius: ${(props) => (props.end ? '2vw' : '0')};
   font-family: 'LuculentRegular';
 `
-
-export const Button = styled.button`
+export const TagSingle = styled.span<Props>`
+  font-size: 1.5vw;
+  color: ${({ color }) => color || '#000000'};
+  background-color: ${(props) => (props.bg ? props.bg : 'red')};
+  padding-top: 0.4rem;
+  padding-left: 0.8vw;
+  padding-right: 0.8vw;
+  margin-top: ${({ mt }) => `${mt}vw` || '1.2vw'};
+  margin-bottom: ${({ mb }) => `${mb}vw` || '1.2vw'};
+  margin-left: ${({ ml }) => `${ml}vw` || '1.2vw'};
+  margin-right: ${(props) => (props.mr ? `${props.mr}vw` : '1.2vw')};
+  border-radius: 2vw;
+  font-family: 'LuculentRegular';
   display: inline-block;
+  transform: ${({ rotation }) =>
+    rotation ? `rotate(${rotation}deg)` : `rotate(0deg)`};
+`
+
+export const Marquee1 = keyframes`
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+`
+
+export const Span = styled.span`
+  animation: ${Marquee1} 2s linear infinite;
+  padding-top: 0.4vw;
+  white-space: nowrap;
+  padding-left: 0.8vw;
+  padding-right: 0.8vw;
+  position: relative;
+  display: block;
+`
+
+export const Container = styled.div`
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &:after,
+  :before {
+    content: 'INFO';
+  }
+`
+
+export const Button = styled.button<Props>`
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
   border: solid 0px;
   border-radius: 2vw;
   margin: 0;
-  padding-top: 0.4vw;
-  padding-left: 0.8vw;
-  padding-right: 0.8vw;
   text-decoration: none;
-  background: #ffffff;
+  background: blue;
   color: #000000;
-
   font-family: 'LuculentRegular';
-  font-size: 2vw;
+  font-size: 1.5vw;
   cursor: pointer;
   text-align: center;
   transition: background 100ms ease-in-out, transform 100ms ease;
@@ -139,7 +171,7 @@ export const Button = styled.button`
   -moz-appearance: none;
 
   &:hover {
-    background: #1807ff;
+    background-color: ${(props) => (props.bg ? props.bg : 'red')};
     color: #ffffff;
   }
 

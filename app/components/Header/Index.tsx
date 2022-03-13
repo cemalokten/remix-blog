@@ -15,11 +15,17 @@ function Header() {
     <S.Header>
       <S.Nav>
         <Link to={CONST.INFO_LINK}>
-          <S.Button type="button">{CONST.INFO}</S.Button>
+          <S.Button type="button" bg={CONST.BLUE_A}>
+            <S.Container>
+              <S.Span>{CONST.INFO}</S.Span>
+            </S.Container>
+          </S.Button>
         </Link>
         {post && <C.Close />}
         <Link to={CONST.BLOG_LINK}>
-          <S.Button type="button">{CONST.BLOG}</S.Button>
+          <S.Button type="button" bg={CONST.PURPLE_A}>
+            {CONST.BLOG}
+          </S.Button>
         </Link>
       </S.Nav>
     </S.Header>

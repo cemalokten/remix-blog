@@ -8,11 +8,11 @@ export default function Index() {
     <S.Section center>
       <S.Article>
         <S.Paragraph>
-          I am a London based Web Developer. Mostly working across (but not
-          limited to) the food, drink, hospitality and lifestyle sectors, with
-          experience in graphic and editorial design for screen and print.
+          I am a London based Web Developer. Mostly working across the food,
+          drink, hospitality and lifestyle sectors, with experience in graphic
+          and editorial design for screen and print.
         </S.Paragraph>
-        <S.List mt={3} mb={3} center>
+        <S.List mt={4} mb={3} center>
           <C.TagSingle background={CONST.GREEN_A} rotation={-6} title="REACT" />
           <C.TagSingle
             background={CONST.YELLOW_D}
