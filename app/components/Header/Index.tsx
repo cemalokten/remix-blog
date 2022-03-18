@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'remix'
+import { useLocation } from 'react-router-dom'
 import * as S from '../../styles'
 import * as C from '..'
 import * as CONST from '../../constants'
-import { useLocation } from 'react-router-dom'
 
 type Props = {
   post: boolean
@@ -15,16 +15,18 @@ function Header() {
     <S.Header>
       <S.Nav>
         <Link to={CONST.INFO_LINK}>
-          <S.Button type="button" bg={CONST.BLUE_A}>
-            <S.Container>
-              <S.Span>{CONST.INFO}</S.Span>
-            </S.Container>
+          <S.Button type="button">
+            <S.TagSingle bgHover={CONST.BLUE_A} colorHover="#FFFFFF">
+              {CONST.INFO}
+            </S.TagSingle>
           </S.Button>
         </Link>
         {post && <C.Close />}
         <Link to={CONST.BLOG_LINK}>
-          <S.Button type="button" bg={CONST.PURPLE_A}>
-            {CONST.BLOG}
+          <S.Button type="button">
+            <S.TagSingle bgHover={CONST.ORANGE_A} colorHover="#FFFFFF">
+              {CONST.BLOG}
+            </S.TagSingle>
           </S.Button>
         </Link>
       </S.Nav>

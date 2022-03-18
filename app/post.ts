@@ -3,6 +3,7 @@ import path from 'path'
 import parseFrontMatter from 'front-matter'
 import invariant from 'tiny-invariant'
 import { marked } from 'marked'
+import Highlight from 'react-highlight'
 
 export type Post = {
   slug: string
@@ -10,7 +11,8 @@ export type Post = {
   tags: string
   date: string
   background: Array<string>
-  color: Array<String>
+  color: Array<string>
+  rotation: Array<number>
 }
 
 export type PostMarkdownAttributes = {
@@ -18,7 +20,8 @@ export type PostMarkdownAttributes = {
   tags: Array<string>
   date: string
   background: Array<string>
-  color: Array<String>
+  color: Array<string>
+  rotation: Array<number>
 }
 
 const pathOfPosts = path.join(__dirname, '..', 'posts')
@@ -30,7 +33,8 @@ const hasValidPostAttributes = (
   attributes?.tags ||
   attributes?.date ||
   attributes?.background ||
-  attributes?.color
+  attributes?.color ||
+  attributes?.rotation
 
 export const getPostsTitle = async () => {
   const postDir = await fs.readdir(pathOfPosts)
@@ -53,6 +57,7 @@ export const getPostsTitle = async () => {
         date: attributes.date,
         background: attributes.background,
         color: attributes.color,
+        rotation: attributes.rotation,
       }
     })
   )
@@ -75,5 +80,6 @@ export const getPost = async (slug: string) => {
     date: attributes.date,
     background: attributes.background,
     color: attributes.color,
+    rotation: attributes.rotation,
   }
 }

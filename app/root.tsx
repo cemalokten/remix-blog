@@ -8,9 +8,12 @@ import {
   ScrollRestoration,
 } from 'remix'
 import type { MetaFunction } from 'remix'
+import { useLocation } from 'react-router-dom'
+
+import { GlobalStyle } from '~/styles'
 import styles from '~/styles/global.css'
 import * as C from './components/index'
-import { useLocation } from 'react-router-dom'
+import github from './styles/github.css'
 
 type Props = {
   children: React.ReactNode
@@ -20,7 +23,10 @@ export const meta: MetaFunction = () => ({
   title: 'Cemal Okten Junior Developer',
 })
 
-export const links = () => [{ rel: 'stylesheet', href: styles }]
+export const links = () => [
+  { rel: 'stylesheet', href: styles },
+  { rel: 'stylesheet', href: github },
+]
 
 function Layout({ children }: Props) {
   return (
@@ -44,6 +50,7 @@ export default function App() {
       </head>
       <body>
         <Layout>
+          <GlobalStyle />
           <Outlet />
         </Layout>
         <ScrollRestoration />

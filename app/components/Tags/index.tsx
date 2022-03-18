@@ -2,33 +2,31 @@ import React from 'react'
 import * as S from '../../styles'
 
 type Props = {
-  tags: Array<string>
+  tags: string
   background: Array<string>
   date: string
   color: Array<string>
+  rotation: Array<number>
 }
 
-function Tags({ tags, background, color, date }: Props) {
-  const tagList = tags.map((tag: string, id: number) => {
-    if (id === 0)
-      return (
-        <S.Tag start bg={background[id]} color={color[id]}>
-          {tag.toLocaleUpperCase()}
-        </S.Tag>
-      )
-    return (
-      <S.Tag bg={background[id]} color={color[id]}>
-        {tag}
-      </S.Tag>
-    )
-  })
+function Tags({ tags, background, color, date, rotation, mb }: Props) {
+  const tagList = tags.map((tag: string, id: number) => (
+    <S.TagSingle bg={background[id]} color={color[id]} rotation={rotation[id]}>
+      {tag}
+    </S.TagSingle>
+  ))
 
   return (
-    <S.Flex mb={1.5}>
+    <S.Flex mb={mb}>
       {tagList}
-      <S.Tag end bg={background[tagList.length]} color={color[tagList.length]}>
+      <S.TagSingle
+        end
+        bg={background[tagList.length]}
+        color={color[tagList.length]}
+        rotation={rotation[tagList.length]}
+      >
         {date}
-      </S.Tag>
+      </S.TagSingle>
     </S.Flex>
   )
 }

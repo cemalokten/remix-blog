@@ -5,11 +5,11 @@ import * as S from '../../styles'
 
 function Close() {
   return (
-    <S.Flex mb={2.2}>
-      <Link to={CONST.BLOG_LINK}>
-        <S.Button>✕</S.Button>
-      </Link>
-    </S.Flex>
+    <Link to={CONST.BLOG_LINK}>
+      <S.Button>
+        <S.TagSingle bgHover={CONST.RED_A}>X</S.TagSingle>
+      </S.Button>
+    </Link>
   )
 }
 
