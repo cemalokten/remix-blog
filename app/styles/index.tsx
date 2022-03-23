@@ -23,15 +23,14 @@ export const Header = styled.header`
   position: fixed;
   top: 0;
   padding: 2rem;
-  z-index: 200;
+  z-index: 5;
   pointer-events: none;
 `
 export const Footer = styled.footer`
   width: 100vw;
   position: fixed;
   bottom: 0;
-  padding: 2rem;
-  z-index: 20;
+  padding: ${CONST.fontSize.tag.desktop};
   pointer-events: none;
 `
 export const Nav = styled.nav`
@@ -60,7 +59,7 @@ export const Section = styled.section<Props>`
   background-color: ${(props) => (props.post ? '#F8F8F8' : 'none')};
   min-height: ${(props) => (props.post ? '0' : '100vh')};
   border-radius: 2vw;
-  margin: ${(props) => (props.post ? '7.5rem 0rem 7.5rem 0rem' : '0')};
+  margin: ${(props) => (props.post ? '9.4vw 0rem 6.15rem 0rem' : '0')};
   z-index: ${(props) => (props.post ? '100' : '0')};
 `
 export const Article = styled.article<Props>`
@@ -203,9 +202,6 @@ export const TagSingle = styled.span<Props>`
   &:hover {
     color: ${({ colorHover, color }) => colorHover || color};
     background-color: ${(props) => (props.bgHover ? props.bgHover : props.bg)};
-  }
-  @media (max-width: 768px) {
-    font-size: ${CONST.MOBILE_TAG};
   }
 `
 

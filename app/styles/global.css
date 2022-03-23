@@ -42,7 +42,7 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'medium';
+  font-family: 'luculent';
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -92,7 +92,6 @@ a:hover {
 }
 
 p {
-  font-size: 2vw;
   margin-top: 1.3rem;
 }
 

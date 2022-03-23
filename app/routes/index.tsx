@@ -5,7 +5,7 @@ import * as CONST from '../constants'
 
 export default function Index() {
   return (
-    <S.Section center>
+    <S.Section mt={10} center>
       <S.Article>
         <S.Paragraph>
           I am a London based Web Developer. Mostly working across the food,

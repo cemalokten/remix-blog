@@ -48,17 +48,10 @@ export const SIZE = {
   tabletCalc: 2,
   laptopCalc: 1.5,
   desktopCalc: 1,
-  baseP: 2,
+  baseP: 1.8,
   baseTag: 1.8,
   baseH1: 3,
 }
-
-// export const breakpoints = {
-//   mobile: `(min-width: ${SIZE.mobile})`,
-//   tablet: `(min-width: ${SIZE.tablet})`,
-//   laptop: `(min-width: ${SIZE.laptop})`,
-//   desktop: `(min-width: ${SIZE.desktop})`,
-// }
 
 export const breakpoints = {
   mobile: `(max-width: ${SIZE.mobile})`,
