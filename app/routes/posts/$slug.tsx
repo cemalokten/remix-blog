@@ -15,7 +15,7 @@ function PostSlug() {
   const post = useLoaderData()
   return (
     <S.Section post center>
-      <S.Article>
+      <S.Article post>
         <S.H1 mt={3} mb={-0.5}>
           {post.title}
         </S.H1>
@@ -30,6 +30,20 @@ function PostSlug() {
           />
         </S.List>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <a href={CONST.EMAIL_LINK}>
+          <S.Button type="button">
+            <S.TagSingle bg={CONST.GREEN_A} colorHover="#FFFFFF">
+              SAY HELLO
+            </S.TagSingle>
+          </S.Button>
+        </a>
+        <a href={CONST.EMAIL_LINK}>
+          <S.Button type="button">
+            <S.TagSingle bg={CONST.GREEN_A} colorHover="#FFFFFF">
+              LEAVE ME SOME FEEDBACK
+            </S.TagSingle>
+          </S.Button>
+        </a>
       </S.Article>
     </S.Section>
   )

@@ -16,22 +16,43 @@ interface Props {
   readonly colorHover?: string
   readonly rotation?: number
   readonly rotationHover?: number
+  readonly margin?: boolean
+  readonly column?: boolean
 }
 
 export const Header = styled.header`
   width: 100vw;
   position: fixed;
   top: 0;
-  padding: 2rem;
+  padding: 3vw;
   z-index: 5;
   pointer-events: none;
+
+  &media ${CONST.breakpoints.laptop} {
+    padding: ${CONST.fontSize.calc(3, CONST.SIZE.laptopCalc, 'vw')};
+  }
+  &media ${CONST.breakpoints.tablet} {
+    padding: ${CONST.fontSize.calc(3, CONST.SIZE.tabletCalc, 'vw')};
+  }
+  &media ${CONST.breakpoints.mobile} {
+    padding: ${CONST.fontSize.calc(3, CONST.SIZE.mobileCalc, 'vw')};
+  }
 `
 export const Footer = styled.footer`
   width: 100vw;
   position: fixed;
   bottom: 0;
-  padding: ${CONST.fontSize.tag.desktop};
+  padding: 3vw;
   pointer-events: none;
+  &media ${CONST.breakpoints.laptop} {
+    padding: ${CONST.fontSize.calc(3, CONST.SIZE.laptopCalc, 'vw')};
+  }
+  &media ${CONST.breakpoints.tablet} {
+    padding: ${CONST.fontSize.calc(3, CONST.SIZE.tabletCalc, 'vw')};
+  }
+  &media ${CONST.breakpoints.mobile} {
+    padding: ${CONST.fontSize.calc(3, CONST.SIZE.mobileCalc, 'vw')};
+  }
 `
 export const Nav = styled.nav`
   display: flex;
@@ -41,7 +62,7 @@ export const Nav = styled.nav`
 `
 export const List = styled.ul<Props>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ column }) => (column ? 'column' : 'row')};
   flex-wrap: wrap;
   justify-content: center;
   align-items: ${(props) => (props.center ? 'center' : 'flex-start')};
@@ -59,11 +80,33 @@ export const Section = styled.section<Props>`
   background-color: ${(props) => (props.post ? '#F8F8F8' : 'none')};
   min-height: ${(props) => (props.post ? '0' : '100vh')};
   border-radius: 2vw;
-  margin: ${(props) => (props.post ? '9.4vw 0rem 6.15rem 0rem' : '0')};
+
+  margin-top: ${({ post, margin }) =>
+    post || margin ? `${CONST.SIZE.baseSectionMargin}vw` : '0'};
+
+  margin-bottom: ${({ post, margin }) =>
+    post || margin ? `${CONST.SIZE.baseSectionMargin}vw` : '0'};
+
   z-index: ${(props) => (props.post ? '100' : '0')};
+
+  @media ${CONST.breakpoints.laptop} {
+    margin-top: ${({ post }) => (post ? '10.1vw' : 0)};
+    margin-bottom: ${({ post }) => (post ? '10.1vw' : 0)};
+  }
+  @media ${CONST.breakpoints.tablet} {
+    margin-top: ${({ post }) => (post ? '11.4vw' : 0)};
+    margin-bottom: ${({ post }) => (post ? '11.4vw' : 0)};
+  }
+
+  @media ${CONST.breakpoints.mobile} {
+    margin-top: ${({ post }) => (post ? '14.1vw' : 0)};
+    margin-bottom: ${({ post }) => (post ? '14.1vw' : 0)};
+  }
 `
 export const Article = styled.article<Props>`
   max-width: 60vw;
+  padding-top: ${({ post }) => (post ? '3vw' : 0)};
+  padding-bottom: ${({ post }) => (post ? '6vw' : 0)};
 
   @media ${CONST.breakpoints.laptop} {
     max-width: 70vw;
@@ -76,8 +119,6 @@ export const Article = styled.article<Props>`
   @media ${CONST.breakpoints.mobile} {
     max-width: 70vw;
   }
-  padding-top: 4vw;
-  padding-bottom: 10vw;
 `
 
 const paragraphBaseStyle = css`
@@ -128,6 +169,15 @@ export const H1 = styled.h1<Props>`
   z-index: 999;
   &:hover {
     color: ${({ color }) => color && color};
+  }
+`
+
+export const InfoBox = styled.div`
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  padding: 4vw;
+  &:before {
+    content: '⭢ ';
   }
 `
 

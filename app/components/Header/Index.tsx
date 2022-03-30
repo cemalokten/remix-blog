@@ -24,7 +24,7 @@ function Header() {
         {post && <C.Close />}
         <Link to={CONST.BLOG_LINK}>
           <S.Button type="button">
-            <S.TagSingle bgHover={CONST.ORANGE_A} colorHover="#FFFFFF">
+            <S.TagSingle bgHover={CONST.BLUE_E} colorHover="#FFFFFF">
               {CONST.BLOG}
             </S.TagSingle>
           </S.Button>

@@ -1,3 +1,9 @@
+type Props = {
+  unit: string
+  calc: number
+  device: number
+}
+
 // MENU OPTIONS
 export const BLOG = 'BLOG'
 export const INFO = 'INFO'
@@ -51,6 +57,8 @@ export const SIZE = {
   baseP: 1.8,
   baseTag: 1.8,
   baseH1: 3,
+  baseSectionMargin: 8.85,
+  baseHeaderPadding: 3,
 }
 
 export const breakpoints = {
@@ -79,5 +87,16 @@ export const fontSize = {
     tablet: `${SIZE.baseH1 * SIZE.tabletCalc}vw`,
     laptop: `${SIZE.baseH1 * SIZE.laptopCalc}vw`,
     desktop: `${SIZE.baseH1}vw`,
+  },
+  sectionMargin: {
+    mobile: `${SIZE.baseSectionMargin * SIZE.mobileCalc}vw`,
+    tablet: `${SIZE.baseSectionMargin * SIZE.tabletCalc}vw`,
+    laptop: `${SIZE.baseSectionMargin * SIZE.laptopCalc}vw`,
+    desktop: `${SIZE.baseSectionMargin}vw`,
+  },
+  calc(size: number, device: number, unit: string): string {
+    const val: number = size * device
+    const valWithUnit: string = `${val}+${unit}`
+    return valWithUnit
   },
 }

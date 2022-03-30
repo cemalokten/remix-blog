@@ -11,25 +11,23 @@ export default function Posts() {
   const posts = useLoaderData<Post[]>()
 
   return (
-    <S.Section center>
+    <S.Section center margin>
       <S.Article mt={7}>
         {posts.map((post) => (
-          <>
+          <S.List key={post.slug} mb={10} column center>
             <Link to={post.slug}>
-              <S.H1 color={post.background[0]} mt={3} mb={-0.5}>
+              <S.H1 color={post.background[0]} mb={-0.5}>
                 {post.title}
               </S.H1>
             </Link>
-            <S.List key={post.slug} mb={5}>
-              <C.Tags
-                tags={post.tags}
-                background={post.background}
-                date={post.date}
-                color={post.color}
-                rotation={post.rotation}
-              />
-            </S.List>
-          </>
+            <C.Tags
+              tags={post.tags}
+              background={post.background}
+              date={post.date}
+              color={post.color}
+              rotation={post.rotation}
+            />
+          </S.List>
         ))}
       </S.Article>
     </S.Section>
