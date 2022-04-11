@@ -5,13 +5,15 @@ import * as CONST from '../constants'
 
 export default function Index() {
   return (
-    <S.Section mt={10} center>
-      <S.Article>
+    <S.Article mt={10} center>
+      <S.Section>
         <S.Paragraph>
           I am a London based Web Developer. Mostly working across the food,
           drink, hospitality and lifestyle sectors, with experience in graphic
           and editorial design for screen and print.
         </S.Paragraph>
+      </S.Section>
+      <S.Section>
         <S.List mt={4} mb={3} center>
           <C.TagSingle background={CONST.GREEN_A} rotation={-6} title="REACT" />
           <C.TagSingle
@@ -68,12 +70,14 @@ export default function Index() {
             title="GRAPHQL"
           />
         </S.List>
+      </S.Section>
+      <S.Section>
         <S.Paragraph>
           We created features to arrange and shift the characters: you can make
           them jump over the baseline or hang from the top. See for yourself on
           the Gravity page, or download the full & free trials.
         </S.Paragraph>
-      </S.Article>
-    </S.Section>
+      </S.Section>
+    </S.Article>
   )
 }

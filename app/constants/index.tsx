@@ -56,7 +56,7 @@ export const SIZE = {
   desktopCalc: 1,
   baseP: 1.8,
   baseTag: 1.8,
-  baseH1: 3,
+  baseH1: 1.8,
   baseSectionMargin: 8.85,
   baseHeaderPadding: 3,
 }

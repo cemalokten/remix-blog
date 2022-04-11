@@ -18,15 +18,17 @@ interface Props {
   readonly rotationHover?: number
   readonly margin?: boolean
   readonly column?: boolean
+  readonly border?: boolean
 }
 
 export const Header = styled.header`
   width: 100vw;
   position: fixed;
   top: 0;
-  padding: 3vw;
+  padding: 1vw;
   z-index: 5;
   pointer-events: none;
+  border-bottom: solid thin black;
 
   &media ${CONST.breakpoints.laptop} {
     padding: ${CONST.fontSize.calc(3, CONST.SIZE.laptopCalc, 'vw')};
@@ -42,8 +44,9 @@ export const Footer = styled.footer`
   width: 100vw;
   position: fixed;
   bottom: 0;
-  padding: 3vw;
+  padding: 1vw;
   pointer-events: none;
+  border-top: solid thin black;
   &media ${CONST.breakpoints.laptop} {
     padding: ${CONST.fontSize.calc(3, CONST.SIZE.laptopCalc, 'vw')};
   }
@@ -68,10 +71,13 @@ export const List = styled.ul<Props>`
   align-items: ${(props) => (props.center ? 'center' : 'flex-start')};
   list-style: none;
   padding-left: 0;
+  border-bottom: solid thin black;
   padding-bottom: ${(props) => props.mb && `${props.mb}vw`};
   padding-top: ${(props) => props.mt && `${props.mt}vw`};
+  padding-top: 2vw;
+  padding-bottom: 2vw;
 `
-export const Section = styled.section<Props>`
+export const Article = styled.article<Props>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -103,43 +109,51 @@ export const Section = styled.section<Props>`
     margin-bottom: ${({ post }) => (post ? '14.1vw' : 0)};
   }
 `
-export const Article = styled.article<Props>`
-  max-width: 60vw;
+export const Section = styled.section<Props>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  border-bottom: ${({ border }) => (border ? 'solid thin black' : 'none')};
   padding-top: ${({ post }) => (post ? '3vw' : 0)};
   padding-bottom: ${({ post }) => (post ? '6vw' : 0)};
 
-  @media ${CONST.breakpoints.laptop} {
-    max-width: 70vw;
-  }
-
-  @media ${CONST.breakpoints.tablet} {
-    max-width: 70vw;
-  }
-
-  @media ${CONST.breakpoints.mobile} {
-    max-width: 70vw;
-  }
+  // @media ${CONST.breakpoints.laptop} {
+  //   max-width: 70vw;
+  // }
+  //
+  // @media ${CONST.breakpoints.tablet} {
+  //   max-width: 70vw;
+  // }
+  //
+  // @media ${CONST.breakpoints.mobile} {
+  //   max-width: 70vw;
+  // }
 `
 
 const paragraphBaseStyle = css`
+  max-width: 60vw;
   margin-top: 2vw;
   margin-bottom: 2vw;
   font-size: ${CONST.fontSize.p.desktop};
 
   @media ${CONST.breakpoints.laptop} {
     font-size: ${CONST.fontSize.p.laptop};
-  }
+    max-width: 70vw;
+  
 
   @media ${CONST.breakpoints.tablet} {
     font-size: ${CONST.fontSize.p.tablet};
     margin-top: 5vw;
     margin-bottom: 5vw;
+    max-width: 70vw;
   }
 
   @media ${CONST.breakpoints.mobile} {
     font-size: ${CONST.fontSize.p.mobile};
     margin-top: 6vw;
     margin-bottom: 6vw;
+    max-width: 70vw;
   }
 `
 
@@ -149,7 +163,7 @@ export const Paragraph = styled.p`
 
 export const H1 = styled.h1<Props>`
   font-size: ${CONST.fontSize.h1.desktop};
-
+  text-transform: uppercase;
   @media ${CONST.breakpoints.laptop} {
     font-size: ${CONST.fontSize.h1.laptop};
   }
@@ -240,7 +254,7 @@ export const TagSingle = styled.span<Props>`
   background-color: ${(props) => (props.bg ? props.bg : 'transparent')};
   padding-left: 0.8vw;
   padding-right: 0.8vw;
-  padding-bottom: 2.6vw;
+  padding-bottom: 2vw;
   margin-right: ${(props) => (props.mr ? `${props.mr}vw` : '1.2vw')};
   border-radius: 2vw;
   font-family: 'LuculentRegular';
